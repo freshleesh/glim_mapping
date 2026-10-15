@@ -9,7 +9,7 @@ F1TENTH (Livox Mid-360) **ros2 bag → GLIM 오프라인 맵** 루틴. GLIM은 �
 
 ## 새 컴퓨터에서 1회 설정
 ```bash
-git clone git@github.com:freshleesh/glim_mapping.git ~/glim_mapping
+git clone https://github.com/freshleesh/glim_mapping.git ~/glim_mapping
 cd ~/glim_mapping && ./setup.sh      # docker, nvidia-container-toolkit(GPU 있으면), 이미지 pull/build
 ```
 Ubuntu + (GPU 쓰려면) NVIDIA 드라이버가 이미 있어야 한다. GPU 이미지는 `koide3/glim_ros2:jazzy_cuda13.1` — 드라이버가 CUDA 13.1을 지원해야 함.
