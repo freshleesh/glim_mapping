@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(glim_export_ply)
+set(CMAKE_CXX_STANDARD 17)
+find_package(glim REQUIRED)
+find_package(gtsam_points REQUIRED)
+find_package(GTSAM REQUIRED)
+add_executable(glim_export_ply glim_export_ply.cpp)
+target_link_libraries(glim_export_ply glim::glim gtsam_points::gtsam_points gtsam)

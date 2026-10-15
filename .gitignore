@@ -1,0 +1,6 @@
+maps/
+*.mcap
+*.db3
+__pycache__/
+*.pyc
+my_*.yaml
