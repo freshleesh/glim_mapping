@@ -1,0 +1,20 @@
+# GLIM map pipeline  ->  ./map.sh my_map.yaml
+# 결과: <out_root>/<map_name>/ 에 <map_name>.pcd + <map_name>.{pgm,yaml} 만 생성.
+# 상대경로는 이 yaml 파일 위치 기준.
+
+map_name:  nuc4_map_1029_1905
+bag_path:  ~/bag/nuc4_map_1029_1905
+
+# --- 선택 (없으면 기본값) ---
+# out_root:  ~/glim_mapping/maps          # 맵 폴더가 생길 루트 (기본 <repo>/maps)
+# glim_config_dir: config/gpu_lowmem      # GPU 메모리 부족(OOM)하면. 기본: use_gpu에 따라 config/gpu | config/cpu
+z_min:     0.05      # 벽 밴드: 바닥 위 최저 높이 (m)
+z_max:     0.3       # 벽 밴드: 최고 높이 (m)
+png_resolution: 0.05 # track mask 해상도 (m/px)
+use_gpu:   true      # false면 CPU 이미지 + config/cpu (느림)
+occ_min_pts: 3       # 한 셀을 벽으로 칠 최소 밴드 점 개수
+
+# --- pcd 높이별 밀도 (지면 위 높이 기준) ---
+dense_z:      0.4    # 이 높이 이하 = 트랙(중요) -> 촘촘. 위 = 벽/천장 -> 성글게
+voxel_dense:  0.05   # dense_z 이하 voxel(m). 작을수록 촘촘 (0 = 다운샘플 없음, 최대밀도)
+voxel_sparse: 0.25   # dense_z 초과 voxel(m). 클수록 성글게
